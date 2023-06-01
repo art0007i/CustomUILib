@@ -12,7 +12,7 @@ namespace CustomUILib
     {
         public static void Main()
         {
-            // I recommend calling this from OnEngineInit, but you can really call it anywhere
+            // I recommend calling this from OnEngineInit, but you can call it from anywhere
             CustomUILib.AddCustomInspector<Comment>(CommentCustomUI);
             CustomUILib.AddCustomInspector<Comment>((cm, ui) =>
             {

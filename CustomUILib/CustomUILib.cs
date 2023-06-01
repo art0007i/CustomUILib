@@ -55,14 +55,7 @@ namespace CustomUILib
 
         private static bool BuildProxy(Worker comp, UIBuilder ui, Predicate<ISyncMember> memberFilter)
         {
-            var filteredList = injectedCustomUI.Where((pair) =>
-            {
-                if (pair.Key.IsAssignableFrom(comp.GetType()))
-                {
-                    return true;
-                }
-                return false;
-            });
+            var filteredList = injectedCustomUI.Where((pair) => pair.Key.IsAssignableFrom(comp.GetType()));
             foreach (var pair in filteredList)
             {
                 pair.Value(comp, ui, memberFilter);
