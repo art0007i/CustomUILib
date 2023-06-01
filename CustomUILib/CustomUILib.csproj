@@ -21,7 +21,7 @@
   </PropertyGroup>
 	
   <ItemGroup>
-    <Compile Remove="Example.cs" />
+	<Compile Remove="Example.cs" />
   </ItemGroup>
 
   <ItemGroup>
