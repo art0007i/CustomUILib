@@ -15,7 +15,7 @@ namespace CustomUILib
     {
         public override string Name => "CustomUILib";
         public override string Author => "art0007i";
-        public override string Version => "1.0.0";
+        public override string Version => "1.0.1";
         public override string Link => "https://github.com/art0007i/CustomUILib/";
 
         static Dictionary<Type, Action<Worker, UIBuilder, Predicate<ISyncMember>>> injectedCustomUI = new();
