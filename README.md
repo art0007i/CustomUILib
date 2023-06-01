@@ -2,8 +2,11 @@
 
 A [NeosModLoader](https://github.com/zkxs/NeosModLoader) mod for [Neos VR](https://neos.com/) that allows modders to easily add custom inspector ui to components which don't have any by default.<br>
 To use simply call the `CustomUILib.AddCustomInspector` function (I recommend using the generic version).<br>
-For an example on how to use this just check example.cs
+For an example on how to use this just check Example.cs
 If a component already implements `ICustomInspector` don't use this mod with it, instead just patch that components BuildInspectorUI function.
+
+This image demonstrates what the Example.cs file produces.<br>
+![image of example](https://github.com/art0007i/CustomUILib/assets/19620451/b47e70a6-8aeb-4569-aaa3-543a1c52e70f)
 
 ## Installation
 1. Install [NeosModLoader](https://github.com/zkxs/NeosModLoader).
