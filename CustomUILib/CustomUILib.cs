@@ -1,20 +1,20 @@
 using HarmonyLib;
-using NeosModLoader;
+using ResoniteModLoader;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using FrooxEngine;
 using FrooxEngine.UIX;
 using System.Reflection.Emit;
-using BaseX;
+using Elements.Core;
 
 namespace CustomUILib
 {
-    public class CustomUILib : NeosMod
+    public class CustomUILib : ResoniteMod
     {
         public override string Name => "CustomUILib";
         public override string Author => "art0007i";
-        public override string Version => "1.1.0";
+        public override string Version => "2.0.0";
         public override string Link => "https://github.com/art0007i/CustomUILib/";
 
         static List<KeyValuePair<Type, Func<Worker, UIBuilder, Predicate<ISyncMember>, IEnumerable<object>>>> injectedCustomUI = new();
@@ -121,7 +121,8 @@ namespace CustomUILib
             list.AddRange(injectedCustomUI.Where((pair) => pair.Key.IsAssignableFrom(comp.GetType())).Select((p) => p.Value(comp, ui, memberFilter).GetEnumerator()));
             var first = true;
             if (list.Count == 0) return false;
-            while (list.Count > 0) {
+            while (list.Count > 0)
+            {
                 for (int i = list.Count - 1; i >= 0; i--)
                 {
                     if (!list[i].MoveNext())
@@ -144,8 +145,7 @@ namespace CustomUILib
         {
             public static bool Prefix(Worker worker, UIBuilder ui, Predicate<ISyncMember> memberFilter)
             {
-                if (BuildProxy(worker, ui, memberFilter)) return false;
-                return true;
+                return !BuildProxy(worker, ui, memberFilter);
             }
         }
     }
